@@ -26,13 +26,15 @@ svg{display:block}
    Arriba: transparente, 100 px, logo y texto blancos. Con scroll: 70 px, blanco al 90 %, logo a color, texto rgba(19,21,22,.75). */
 :root{--hdr-font:'Titillium Web',Inter,system-ui,sans-serif;--site-blue:#006fad;--nav-ink:rgba(19,21,22,.75)}
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;height:100px;background:rgba(255,255,255,0);transition:background .3s,height .3s,box-shadow .3s}
-.nav .wrap{max-width:none;margin:0;padding:0 30px;height:100%;display:flex;align-items:center;justify-content:space-between;position:relative}
-.logo{display:flex;align-items:center;position:relative}
+/* Contenedor de 1248 px centrado (fila con 30 px de relleno); logo y menú a 24 px de los bordes, como en viveenergia.com */
+.nav .wrap{width:100%;max-width:1308px;margin:0 auto;padding:0 30px;height:100%;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;position:relative;margin-left:24px}
 .logo img{width:198px;height:43px;display:block;transition:opacity .3s}
 .logo .c{position:absolute;left:0;top:0;opacity:0}
 .nav ul{display:flex;list-style:none;font-family:var(--hdr-font);font-size:16px;font-weight:400;letter-spacing:.24px;height:100%}
 .nav .wrap>ul>li{margin:0 15px;display:flex;align-items:stretch}
 .nav .wrap>ul>li:last-child{margin-right:0}
+.nav .wrap>ul{margin-right:24px}
 .nav .wrap>ul>li>a{display:flex;align-items:center;gap:5px;padding:0 6px 2px;color:#fff;transition:color .3s;position:relative}
 .nav .wrap>ul>li>a:after{content:"";position:absolute;left:6px;right:6px;bottom:16px;height:2px;background:currentColor;transform:scaleX(0);transition:transform .25s}
 .nav .wrap>ul>li.on>a:after,.nav .wrap>ul>li>a:hover:after{transform:scaleX(1)}
@@ -200,6 +202,8 @@ footer .logo{margin-bottom:14px}footer .logo img{width:auto;height:43px}
 /* ---------- TABLET ---------- */
 @media(max-width:1020px){
   .burger{display:flex}
+  .logo{margin-left:0}
+  .nav .wrap>ul{margin-right:0}
   .nav.open{background:rgba(255,255,255,.97)}
   .nav.open .logo .w{opacity:0}.nav.open .logo .c{opacity:1}
   .nav.open .burger{color:rgb(20,22,23)}
